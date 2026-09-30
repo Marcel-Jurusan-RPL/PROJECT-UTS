@@ -1,0 +1,152 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://Assets/Images/Player/Ninja Frog/Idle (32x32).png" id="2_idle"]
+[ext_resource type="Texture2D" path="res://Assets/Images/Traps/Saw/On (38x38).png" id="3_saw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_0"]
+atlas = ExtResource("2_idle")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_1"]
+atlas = ExtResource("2_idle")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_2"]
+atlas = ExtResource("2_idle")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idle_3"]
+atlas = ExtResource("2_idle")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player_idle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle_3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saw_0"]
+atlas = ExtResource("3_saw")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saw_1"]
+atlas = ExtResource("3_saw")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saw_2"]
+atlas = ExtResource("3_saw")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saw_3"]
+atlas = ExtResource("3_saw")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_saw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saw_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saw_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saw_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saw_3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=1232415703]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1889486417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.14, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1760937001]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1720647957]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1657051764]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "UTS GAME PLATFORMER"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1680343526]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.8, 0.8, 0.3, 1)
+text = "3-LEVEL SCORE CHALLENGE"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1859629693]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PLAY"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1026014015]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "QUIT"
+
+[node name="DecorativePlayer" type="AnimatedSprite2D" parent="." unique_id=851672182]
+position = Vector2(250, 480)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_player_idle")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="DecorativeEnemy" type="AnimatedSprite2D" parent="." unique_id=2085038359]
+position = Vector2(900, 480)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_saw")
+animation = &"idle"
+autoplay = "idle"

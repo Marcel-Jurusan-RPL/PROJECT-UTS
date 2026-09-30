@@ -1,0 +1,81 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_go"]
+
+[node name="GameOver" type="Control" unique_id=1121937324]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_go")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1011441155]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.08, 0.08, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1246030851]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=625643526]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=896835460]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1318127159]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SCORE: 0000"
+horizontal_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=517105636]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.9, 0.8, 0.3, 1)
+text = "BEST SCORE: 0000"
+horizontal_alignment = 1
+
+[node name="ControlSpacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=966916074]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1545931466]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "RESTART"
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1426755865]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MAIN MENU"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=401509485]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "QUIT"

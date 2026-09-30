@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/final_result.gd" id="1_fr"]
+
+[node name="FinalResult" type="Control" unique_id=1846867052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=834744608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.18, 0.12, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=865647920]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1103286096]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1786076542]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+theme_override_colors/font_color = Color(0.3, 1, 0.5, 1)
+text = "CONGRATULATIONS!"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=370763784]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "FINAL SCORE: 0000"
+horizontal_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=404088327]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.9, 0.8, 0.3, 1)
+text = "BEST SCORE: 0000"
+horizontal_alignment = 1
+
+[node name="ControlSpacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=72026934]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PlayAgainButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=158926972]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "PLAY AGAIN"
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1337425057]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "MAIN MENU"

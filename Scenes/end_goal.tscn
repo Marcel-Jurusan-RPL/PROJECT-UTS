@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/end_goal.gd" id="1_end"]
+[ext_resource type="Texture2D" path="res://Assets/Images/Items/Checkpoints/End/End (Idle).png" id="2_end_img"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_end"]
+size = Vector2(48, 48)
+
+[node name="EndGoal" type="Area2D" unique_id=1212454]
+script = ExtResource("1_end")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1356371263]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_end_img")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=904269868]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_end")

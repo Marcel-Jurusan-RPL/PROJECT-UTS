@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1972946648]
+script = ExtResource("1_hud")
+
+[node name="Control" type="Control" parent="." unique_id=680557036]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=556072769]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1390041760]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=317712099]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "SCORE: 0000"
+
+[node name="LevelLabel" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=1388571532]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "LEVEL 1"
+horizontal_alignment = 2
